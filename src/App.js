@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { ComponentA } from './components/ComponentA';
+import { ComponentB } from './components/ComponentB';
+import MyCounter from './components/MyCounter';
+import CounterContextProvider from './contexts/CounterContext';
+
+
 
 function App() {
   return (
+    // Wrap components that need counter elements in the counter provider
+    <CounterContextProvider>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Context Api</h2>
+      <ComponentA />
+      <ComponentB />
+      <MyCounter />
     </div>
+    </CounterContextProvider>
   );
 }
 
